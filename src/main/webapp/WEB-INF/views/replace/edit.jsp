@@ -12,31 +12,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
 </head>
-<body onload="getId();">
-    <script>
-        function getId() {
-            let id = window.location.href.split("?")[1].split("=")[1];
-            console.log("start getId = " + id);
-            document.getElementById("input1").setAttribute("value", id);
-        }
-    </script>
-<form  action="<c:url value='/replace'/>" method='POST'>
+<body>
+    <form action="<c:url value='/save?id=${accident.id}'/>" method='POST'>
     <table>
         <tr>
-            <td>ID:</td><br>
-            <td><input id="input1" type='text' name='id'></td><br>
-            <td>&nbsp;&nbsp;Название:</td><br>
-            <td><input type='text' name='name'></td><br>
-            <td>&nbsp;&nbsp;Описание:</td><br>
-            <td><input type='text' name='text'></td><br>
-            <td>&nbsp;&nbsp;Адрес:</td><br>
-            <td><input type='text' name='address'></td><br>
+            <td>Название:</td>
+            <td><input type='text' name='name' value="${accident.name}"></td>
         </tr>
         <tr>
-            <br>
+        <tr>
             <td colspan='2'><input name="submit" type="submit" value="Сохранить" /></td>
         </tr>
     </table>
-</form>
+    </form>
+    
 </body>
 </html>

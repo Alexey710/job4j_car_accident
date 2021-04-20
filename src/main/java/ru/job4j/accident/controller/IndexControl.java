@@ -15,7 +15,6 @@ public class IndexControl {
     @GetMapping("/")
     public String index(Model model) {
         AccidentMem accidents = new AccidentMem();
-        //accidents.createTemporaryData();
         Map<Integer, Accident> map =  accidents.getAccidents();
         model.addAttribute("accidents", map);
         return "index";

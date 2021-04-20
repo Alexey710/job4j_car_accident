@@ -22,6 +22,10 @@ public class AccidentMem {
         accidents.replace(accident.getId(), accident);
     }
 
+    public Accident findById(int id) {
+        return accidents.get(id);
+    }
+
     @Override
     public String toString() {
         return "AccidentMem{" + "accidents=" + accidents + '}';

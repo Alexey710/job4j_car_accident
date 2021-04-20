@@ -18,7 +18,6 @@
                 <div class="card-body">
 
                     <a href="<c:url value='/create'/>">Добавить инцидент</a><br>
-                   
 
                     <table class="table" id="table1">
                         <thead>
