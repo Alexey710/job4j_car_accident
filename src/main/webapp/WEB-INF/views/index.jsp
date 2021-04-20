@@ -18,15 +18,30 @@
                     <table class="table" id="table1">
                         <thead>
                             <tr>
-                                <th>ФИО</th>
+                                <th>id</th>
+
+                                <th>Название</th>
+
+                                <th>Описание</th>
+
+                                <th>Адрес</th>
                             </tr>
                         </thead>
                              <tbody>
-                                    <c:forEach items="${users}" var="user">
+                                    <c:forEach items="${accidents}" var="entry">
                                     <tr>
-                                    <td>
-                                    <c:out value="${user}"/>
-                                    </td>
+                                      <td>
+                                        <c:out value="${entry.value.id}"/>
+                                      </td>
+                                      <td>
+                                        <c:out value="${entry.value.name}"/>
+                                      </td>
+                                      <td>
+                                        <c:out value="${entry.value.text}"/>
+                                      </td>
+                                      <td>
+                                        <c:out value="${entry.value.address}"/>
+                                      </td>
                                     </tr>
                                     </c:forEach>
                              </tbody>
