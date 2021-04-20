@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
 </head>
 <body>
     <div id="container" class="container pt-3">
@@ -15,6 +16,10 @@
                 Таблица Accident:
                 </div>
                 <div class="card-body">
+
+                    <a href="<c:url value='/create'/>">Добавить инцидент</a><br>
+                   
+
                     <table class="table" id="table1">
                         <thead>
                             <tr>
@@ -32,6 +37,7 @@
                                     <tr>
                                       <td>
                                         <c:out value="${entry.value.id}"/>
+                                         <a href="<c:url value='/edit?id=${entry.value.id}'/>">&nbsp;&nbsp;редактировать инцидент</a><br>
                                       </td>
                                       <td>
                                         <c:out value="${entry.value.name}"/>

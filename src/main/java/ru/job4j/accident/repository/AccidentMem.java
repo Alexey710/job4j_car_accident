@@ -14,9 +14,16 @@ public class AccidentMem {
         return accidents;
     }
 
-    public void createTemporaryData() {
-        accidents.put(1, Accident.of(1, "Accident 1", "text 1", "Address 1"));
-        accidents.put(2, Accident.of(2, "Accident 2", "text 2", "Address 2"));
-        accidents.put(3, Accident.of(3, "Accident 3", "text 3", "Address 3"));
+    public void create(Accident accident) {
+        accidents.put(accident.getId(), accident);
+    }
+
+    public void update(Accident accident) {
+        accidents.replace(accident.getId(), accident);
+    }
+
+    @Override
+    public String toString() {
+        return "AccidentMem{" + "accidents=" + accidents + '}';
     }
 }
