@@ -68,12 +68,12 @@ public class AccidentControl {
         }
         accidents.create(accident);
         String[] ids = req.getParameterValues("rIds");
-        System.out.println("String[] ids =>" + Arrays.toString(ids));
+      
         Set<Rule> rules = new HashSet<>();
         for(String id : ids) {
             rules.add(Rule.of(Integer.parseInt(id))); 
         }
-        System.out.println("SAVE SETrules =>" + rules);
+    
         accident.setRules(rules);
       
         model.addAttribute("accidents", accidents.getAccidents());
