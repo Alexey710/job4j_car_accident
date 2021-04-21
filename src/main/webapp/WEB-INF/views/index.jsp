@@ -27,6 +27,8 @@
                                 <th>Название</th>
                                 
                                 <th>Тип</th>
+                                
+                                <th>Статья</th>
 
                                 <th>Описание</th>
 
@@ -45,6 +47,9 @@
                                       </td>
                                       <td>
                                         <c:out value="${entry.value.type.name}"/>
+                                      </td>
+                                      <td>
+                                        <c:out value="${entry.value.rules}"/>
                                       </td>
                                       <td>
                                         <c:out value="${entry.value.text}"/>

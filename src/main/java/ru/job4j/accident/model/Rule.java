@@ -1,28 +1,25 @@
 package ru.job4j.accident.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-public class AccidentType {
-    private Integer id;
+public class Rule {
 
+    private int id;
     private String name;
 
-    public static AccidentType of(Integer id) {
-        AccidentType type = new AccidentType();
-        type.id = id;
+    public static Rule of(int id) {
+        Rule rule = new Rule();
+        rule.id = id;
         if (id == 1) {
-            type.name = "Две машины";
+            rule.name = "Статья. 1";
         }
         if (id == 2) {
-            type.name = "Машина и человек";
+            rule.name = "Статья. 2";
         }
         if (id == 3) {
-            type.name = "Машина и велосипед";
+            rule.name = "Статья. 3";
         }
-      
-        return type;
+        return rule;
     }
 
     public int getId() {
@@ -49,8 +46,8 @@ public class AccidentType {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AccidentType that = (AccidentType) o;
-        return id == that.id;
+        Rule rule = (Rule) o;
+        return id == rule.id;
     }
 
     @Override
@@ -60,7 +57,6 @@ public class AccidentType {
 
     @Override
     public String toString() {
-        return "AccidentType{" + "id=" + id + ", name='" + name + '\'' + '}';
+        return  name + System.lineSeparator();
     }
-
 }
