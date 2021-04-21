@@ -1,7 +1,6 @@
 package ru.job4j.accident;
 
 
-
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -24,6 +23,7 @@ public class WebInit implements WebApplicationInitializer {
         filter.setForceRequestEncoding(true);
         FilterRegistration.Dynamic encoding = servletCxt.addFilter("encoding", filter);
         encoding.addMappingForUrlPatterns(null, false, "/*");
+        
         DispatcherServlet servlet = new DispatcherServlet(ac);
         ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
         registration.setLoadOnStartup(1);

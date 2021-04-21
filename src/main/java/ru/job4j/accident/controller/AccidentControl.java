@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.job4j.accident.model.Accident;
+import ru.job4j.accident.model.AccidentType;
 import ru.job4j.accident.repository.AccidentMem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class AccidentControl {
@@ -18,13 +22,41 @@ public class AccidentControl {
     }
 
     @GetMapping("/create")
-    public String create() {
+    public String create(Model model) {
+        List<AccidentType> types = new ArrayList<>();
+        types.add(AccidentType.of(1));
+        types.add(AccidentType.of(2));
+        types.add(AccidentType.of(3));
+  
+        model.addAttribute("types", types);
+
         return "accident/create";
     }
-
+    
+    @PostMapping("/saveName")
+    public String saveName(
+            @RequestParam(value = "type_id", required = false) Integer typeId,
+            @ModelAttribute Accident accident, Model model) {
+        
+        Accident accidentNewName = accidents.findById(accident.getId());
+        accidentNewName.setName(accident.getName());
+       
+        accidents.create(accidentNewName);
+     
+        model.addAttribute("accidents", accidents.getAccidents());
+        return "index";
+    }
+    
     @PostMapping("/save")
-    public String save(@ModelAttribute Accident accident, Model model) {
+    public String save(
+            @RequestParam(value = "type_id", required = false) Integer typeId,
+            @ModelAttribute Accident accident, Model model) {
+       
+        if (typeId != null) {
+            accident.setType(AccidentType.of(typeId));
+        }
         accidents.create(accident);
+      
         model.addAttribute("accidents", accidents.getAccidents());
         return "index";
     }

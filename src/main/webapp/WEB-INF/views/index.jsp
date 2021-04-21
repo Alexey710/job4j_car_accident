@@ -25,6 +25,8 @@
                                 <th>id</th>
 
                                 <th>Название</th>
+                                
+                                <th>Тип</th>
 
                                 <th>Описание</th>
 
@@ -42,11 +44,15 @@
                                         <c:out value="${entry.value.name}"/>
                                       </td>
                                       <td>
+                                        <c:out value="${entry.value.type.name}"/>
+                                      </td>
+                                      <td>
                                         <c:out value="${entry.value.text}"/>
                                       </td>
                                       <td>
                                         <c:out value="${entry.value.address}"/>
                                       </td>
+                                      
                                     </tr>
                                     </c:forEach>
                              </tbody>

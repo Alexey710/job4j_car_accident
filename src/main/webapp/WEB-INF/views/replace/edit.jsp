@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
 </head>
 <body>
-    <form action="<c:url value='/save?id=${accident.id}'/>" method='POST'>
+    <form action="<c:url value='/saveName?id=${accident.id}'/>" method='POST'>
     <table>
         <tr>
             <td>Название:</td>
