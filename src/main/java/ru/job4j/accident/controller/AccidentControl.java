@@ -70,7 +70,7 @@ public class AccidentControl {
         String[] ids = req.getParameterValues("rIds");
       
         Set<Rule> rules = new HashSet<>();
-        for(String id : ids) {
+        for (String id : ids) {
             rules.add(Rule.of(Integer.parseInt(id))); 
         }
     
