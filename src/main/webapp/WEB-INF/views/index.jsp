@@ -5,8 +5,11 @@
     <title>Accident</title>
 </head>
 <body>
-<c:forEach items="${accidents}" var="accident">
+ <div>
+        Login as : ${user.username}
+ </div>
+ <c:forEach items="${accidents}" var="accident">
     <c:out value="${accident.name}"/></br>
-</c:forEach>
+ </c:forEach>
 </body>
 </html>
